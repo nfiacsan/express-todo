@@ -1,0 +1,31 @@
+<%- include("partials/head.ejs") %>
+<div class="container">
+  <h1 >My todo list</h1>
+
+
+  <form action="/" method="post">
+    <div class="flex-row">
+      <input placeholder="New todo..." type="text" name="text" required>
+      <input type="date" name="date" >
+    </div>
+    <input type="submit" value="Add">
+  </form>
+
+  <div class="todos">
+  <% for (todo of todos) { %>
+    <div class="todo">
+      <input type="checkbox"> 
+      <div>
+      <span><%= todo.text %></span>
+      <% if (todo.date) { %>
+        <% const todoDate = new Date(todo.date); %>
+          <% const currentDate = new Date(); %>
+          <span class="date"><%= todo.date %></span>
+          <% } %>
+          </div>
+          </div>
+          <% } %>
+          </div>
+
+
+</div>
